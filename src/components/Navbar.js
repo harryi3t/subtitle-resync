@@ -1,21 +1,7 @@
 import React, { Component } from 'react';
-require('../styles/main.scss');
+import {Link} from 'react-scroll';
 
-const menus = () => {
-  return (
-    <div className='collapse navbar-collapse'>
-      <ul className='nav navbar-nav navbar-right'>
-        <li className='hidden'>
-          <a href='#page-top'></a>
-        </li>
-        {this.props.menus}
-        <li className='page-scroll' >
-          <a href='#projects'>Projects</a>
-        </li>
-      </ul>
-    </div>
-  );
-}
+require('../styles/main.scss');
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -27,8 +13,16 @@ export default class Navbar extends Component {
       return;
     var items = JSON.parse(this.props.menus).map( (item, index) => {
       return (
-        <li className='page-scroll' key={index}>
-          <a href={'#' + item}>{item}</a>
+        <li key={index}>
+          <Link
+            activeClass='active'
+            to={item}
+            spy={true}
+            smooth={true}
+            offset={-90}
+            duration={500}>
+            {item}
+          </Link>
         </li>
       );
     });
@@ -58,8 +52,16 @@ export default class Navbar extends Component {
               <span className='sr-only'>Toggle navigation</span>
                 Menu <i className='fa fa-bars'></i>
             </button>
-            <a className='clickable navbar-brand' href='#page-top'>
-              HARRYI3T.GITHUB.IO</a>
+            <Link
+              activeClass='active'
+              className='clickable navbar-brand'
+              to='page-top'
+              spy={true}
+              smooth={true}
+              offset={-120}
+              duration={500}>
+              HARRYI3T.GITHUB.IO
+            </Link>
             <a href='https://github.com/harryi3t/harryi3t.github.io'>
               <span className='clickable fa fa-github fa-3x'></span>
             </a>

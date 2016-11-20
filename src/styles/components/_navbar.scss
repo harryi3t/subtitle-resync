@@ -16,12 +16,9 @@ $font_4: sans-serif;
 	border-color: $primary_color;
 }
 
-.mainNav{
-
-}
-
 .clickable{
   color: $white;
+  cursor: pointer;
 }
 
 .clickable:hover{
@@ -54,31 +51,10 @@ $font_4: sans-serif;
 		li {
 			a {
 				color: $white;
-				&:hover {
+        cursor: pointer;
+				&:hover, &.active {
 					color: $primary_color;
 					outline: none;
-				}
-				&:focus {
-					color: $white;
-				}
-				&:active {
-					color: $white;
-				}
-			}
-			&.active a {
-				color: $white;
-				background: $primary_color;
-				&:hover {
-					color: $white;
-					background: $primary_color;
-				}
-				&:focus {
-					color: $white;
-					background: $primary_color;
-				}
-				&:active {
-					color: $white;
-					background: $primary_color;
 				}
 			}
 		}

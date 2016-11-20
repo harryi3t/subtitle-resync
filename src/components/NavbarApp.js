@@ -5,7 +5,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Navbar title="Subtitle Resync" />
+        <Navbar menus='["projects", "about", "contact"]' />
         <div style={{marginTop: '130px'}} className="container">
           {this.props.children}
         </div>
