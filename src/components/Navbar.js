@@ -9,8 +9,6 @@ export default class Navbar extends Component {
     this.getMenus = this.getMenus.bind(this);
   }
   getMenus() {
-    if (this.props.title)
-      return;
     var items = JSON.parse(this.props.menus).map( (item, index) => {
       return (
         <li key={index}>
@@ -69,12 +67,9 @@ export default class Navbar extends Component {
                   smooth={true}
                   offset={-120}
                   duration={500}>
-                  HARRYI3T.GITHUB.IO
+                  {this.props.title}
                 </Link>
               </div>
-          </div>
-          <div className='navbar-title nav navbar-nav navbar-right'>
-            <h3>{this.props.title}</h3>
           </div>
           {this.getMenus()}
         </div>
