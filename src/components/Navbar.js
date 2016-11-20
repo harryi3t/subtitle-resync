@@ -52,19 +52,26 @@ export default class Navbar extends Component {
               <span className='sr-only'>Toggle navigation</span>
                 Menu <i className='fa fa-bars'></i>
             </button>
-            <Link
-              activeClass='active'
-              className='clickable navbar-brand'
-              to='page-top'
-              spy={true}
-              smooth={true}
-              offset={-120}
-              duration={500}>
-              HARRYI3T.GITHUB.IO
-            </Link>
-            <a href='https://github.com/harryi3t/harryi3t.github.io'>
-              <span className='clickable fa fa-github fa-3x'></span>
-            </a>
+              <div className='Aligner'>
+                <a href='/' className='icon clickable home'>
+                  <span className='fa-stack fa-2x' aria-hidden='true'>
+                    <i className='fa fa-circle-thin fa-stack-2x'></i>
+                    <i className='fa fa-home fa-stack-1x'></i>
+                  </span>
+                </a>
+                <a href='https://github.com/harryi3t/subtitle-resync'
+                  className='icon'>
+                  <span className='clickable fa fa-github fa-4x'></span>
+                </a>
+                <Link to='page-top' className='clickable navbar-brand'
+                  activeClass='active'
+                  spy={true}
+                  smooth={true}
+                  offset={-120}
+                  duration={500}>
+                  HARRYI3T.GITHUB.IO
+                </Link>
+              </div>
           </div>
           <div className='navbar-title nav navbar-nav navbar-right'>
             <h3>{this.props.title}</h3>
