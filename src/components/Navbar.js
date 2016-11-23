@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'underscore';
 import {Link} from 'react-scroll';
 
 require('../styles/main.scss');
@@ -9,6 +10,9 @@ export default class Navbar extends Component {
     this.getMenus = this.getMenus.bind(this);
   }
   getMenus() {
+    if (_.isEmpty(this.props.menus))
+      return;
+
     var items = JSON.parse(this.props.menus).map( (item, index) => {
       return (
         <li key={index}>

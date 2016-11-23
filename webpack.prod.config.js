@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'static'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: 'static/'
   },
   module: {
     loaders: [{
@@ -19,6 +19,9 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loaders: ['style', 'css', 'sass']
+    }, {
+      test: /\.png$/,
+      loader: 'file-loader?name=images/[name].[ext]'
     }]
   }
 };
