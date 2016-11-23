@@ -9,6 +9,11 @@ Object.assign(prodConfig, {
     'webpack-hot-middleware/client',
     './src/index'
   ],
+  output: {
+    path: path.join(__dirname, 'static'),
+    filename: 'bundle.js',
+    publicPath: '/static/'
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
