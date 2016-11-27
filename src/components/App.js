@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavbarApp from './NavbarApp';
+import Navbar from 'my-navbar';
 import Resync from './Resync';
 
 // If you use React Router, make this component
@@ -12,9 +12,9 @@ import Resync from './Resync';
 export default class App extends Component {
   render() {
     return (
-      <NavbarApp>
+      <Navbar url='https://github.com/harryi3t/subtitle-resync'>
         <Resync />
-      </NavbarApp>
+      </Navbar>
     );
   }
 }
